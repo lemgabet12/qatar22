@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 
-class FanScreen extends StatefulWidget {
-  FanScreen();
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<FanScreen> {
+class FanScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(color: Colors.white // This is optional
-        );
+    return Scaffold(
+      body: Center(
+        child: Text('Fan screen'),
+      ),
+    );
   }
 }

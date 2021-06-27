@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:qatar22/screens/fan/fan-screen.dart';
 import 'package:qatar22/screens/feed/feed-screen.dart';
-import 'package:qatar22/screens/infos/infos-screen.dart';
+import 'package:qatar22/screens/home/home-screen.dart';
 import 'package:qatar22/screens/program/program-screen.dart';
-import 'package:qatar22/screens/splash-screen/SplashScreen.dart';
-import 'screens/account/account-screen.dart';
+import 'package:qatar22/screens/splash/SplashScreen.dart';
 import 'shared/Constant.dart';
 
 void main() {
@@ -28,11 +26,7 @@ class MyApp extends StatelessWidget {
       home: SplashScreen(),
       routes: <String, WidgetBuilder>{
         SPLASH_SCREEN: (BuildContext context) => SplashScreen(),
-        FEED_SCREEN: (BuildContext context) => FeedScreen(),
-        PROGRAM_SCREEN: (BuildContext context) => ProgramScreen(),
-        INFOS_SCREEN: (BuildContext context) => InfosScreen(),
-        FAN_SCREEN: (BuildContext context) => FanScreen(),
-        ACCOUNT_SCREEN: (BuildContext context) => AccountScreen()
+        HOME_SCREEN: (BuildContext context) => HomeScreen()
       },
     );
   }

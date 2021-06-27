@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 
-class InfosScreen extends StatefulWidget {
-  InfosScreen();
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<InfosScreen> {
+class InfosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(color: Colors.white // This is optional
-        );
+    return Scaffold(
+      body: Center(
+        child: Text('Account screen'),
+      ),
+    );
   }
 }

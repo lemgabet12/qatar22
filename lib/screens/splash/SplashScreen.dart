@@ -10,8 +10,8 @@ class SplashScreen extends StatefulWidget {
 
 class SplashScreenState extends State<SplashScreen> {
   void startTimer() {
-    Timer(Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacementNamed(FEED_SCREEN);
+    Timer(Duration(seconds: 5), () {
+      Navigator.of(context).pushReplacementNamed(HOME_SCREEN);
     });
   }
 
@@ -24,12 +24,9 @@ class SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: new Image(
-      image: AssetImage('assets/images/qatar22.jpg'),
-      fit: BoxFit.cover,
-      height: double.infinity,
-      width: double.infinity,
-      alignment: Alignment.center,
-    ));
+        backgroundColor: Colors.white,
+        body: Center(
+            child: Image.asset('assets/images/qatar1.jpg',
+                width: MediaQuery.of(context).size.width * .8)));
   }
 }
