@@ -1,15 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:qatar22/screens/components/bottom-navigation-bar.dart';
+import 'package:qatar22/screens/account/account-screen.dart';
+import 'package:qatar22/screens/components/my-app-bar.dart';
+import 'package:qatar22/screens/fan/fan-screen.dart';
+import 'package:qatar22/screens/feed/feed-screen.dart';
+import 'package:qatar22/screens/infos/infos-screen.dart';
+import 'package:qatar22/screens/program/program-screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  HomeScreenState createState() => new HomeScreenState();
+}
+
+class HomeScreenState extends State<HomeScreen> {
+  int _selectedIndex = 0;
+  final List<Widget> _widgetOptions = [
+    FeedScreen(),
+    ProgramScreen(),
+    InfosScreen(),
+    FanScreen(),
+    AccountScreen()
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Fifa Qatar 2022'),
+      appBar: Myappbar(),
+      body: Stack(
+        children: <Widget>[
+          getCurrentPage(_selectedIndex),
+        ],
       ),
-      body: Center(child: Text("home")),
-      bottomNavigationBar: CustumBottomNavigationBar(),
+      bottomNavigationBar: CustumBottomNavigationBar(onSelectItem: (index) {
+        _selectedIndex = index;
+        setState(() {});
+      }),
     );
+  }
+
+  getCurrentPage(int selectedIndex) {
+    print(selectedIndex);
+    return _widgetOptions.elementAt(selectedIndex);
   }
 }
