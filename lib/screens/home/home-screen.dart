@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qatar22/screens/components/bottom-navigation-bar.dart';
 import 'package:qatar22/screens/account/account-screen.dart';
+import 'package:qatar22/screens/components/drawer.dart';
 import 'package:qatar22/screens/components/my-app-bar.dart';
 import 'package:qatar22/screens/fan/fan-screen.dart';
 import 'package:qatar22/screens/feed/feed-screen.dart';
@@ -32,41 +33,42 @@ class HomeScreenState extends State<HomeScreen> {
           getCurrentPage(_selectedIndex),
         ],
       ),
-      drawer: Drawer(
-        // Add a ListView to the drawer. This ensures the user can scroll
-        // through the options in the drawer if there isn't enough vertical
-        // space to fit everything.
-        child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Color.fromRGBO(153, 35, 43, 1.0),
-                ),
-                child: SvgPicture.asset("images/logo2.svg",
-                    width: 50.0, height: 50.0, fit: BoxFit.fitWidth)),
-            ListTile(
-              title: Text('Item 1'),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: Text('Item 2'),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: InkWellDrawer(),
+      // Drawer(
+      //   // Add a ListView to the drawer. This ensures the user can scroll
+      //   // through the options in the drawer if there isn't enough vertical
+      //   // space to fit everything.
+      //   child: ListView(
+      //     // Important: Remove any padding from the ListView.
+      //     padding: EdgeInsets.zero,
+      //     children: <Widget>[
+      //       DrawerHeader(
+      //           decoration: BoxDecoration(
+      //             color: Color.fromRGBO(153, 35, 43, 1.0),
+      //           ),
+      //           child: SvgPicture.asset("images/logo2.svg",
+      //               width: 50.0, height: 50.0, fit: BoxFit.fitWidth)),
+      //       ListTile(
+      //         title: Text('Item 1'),
+      //         onTap: () {
+      //           // Update the state of the app
+      //           // ...
+      //           // Then close the drawer
+      //           Navigator.pop(context);
+      //         },
+      //       ),
+      //       ListTile(
+      //         title: Text('Item 2'),
+      //         onTap: () {
+      //           // Update the state of the app
+      //           // ...
+      //           // Then close the drawer
+      //           Navigator.pop(context);
+      //         },
+      //       ),
+      //     ],
+      //   ),
+      // ),
       bottomNavigationBar: CustumBottomNavigationBar(onSelectItem: (index) {
         _selectedIndex = index;
         setState(() {});
