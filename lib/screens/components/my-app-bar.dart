@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:qatar22/screens/components/settings.dart';
 
 class Myappbar extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -16,7 +17,10 @@ class Myappbar extends StatelessWidget implements PreferredSizeWidget {
             icon: Icon(Icons.settings, color: Colors.white),
             alignment: Alignment.centerLeft,
             onPressed: () {
-              // do something
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SettingsFourPage()),
+              );
             },
           )
         ]);
