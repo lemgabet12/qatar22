@@ -79,6 +79,7 @@ flutter:
   #    - assets/images/liverpool.png
   #    - assets/images/aymen.png
   #    - assets/images/5-stars.svg
+     
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
