@@ -26,8 +26,8 @@ class _MyDetailPageState extends State<PremierLeague> {
           Padding(
             padding: const EdgeInsets.only(top: 25),
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,42 +40,49 @@ class _MyDetailPageState extends State<PremierLeague> {
                         fontWeight: FontWeight.w700,
                       ),
                     ),
+                    SizedBox(
+                      height: 5,
+                    ),
                   ],
                 ),
                 Container(
                   child: Row(
                     children: [
                       Text(
-                        "Wolves",
+                        match.equipe1,
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Image.asset(
+                        match.img1,
+                        height: 46,
+                        width: 46,
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        match.sccore,
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 17,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      Container(
-                        padding: EdgeInsets.only(
-                          left: 20,
-                          right: 20,
-                        ),
-                        child: Image.asset("assets/images/wolves.png",
-                            height: 38, width: 38),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Image.asset(
+                        match.img2,
+                        height: 46,
+                        width: 46,
+                      ),
+                      SizedBox(
+                        height: 5,
                       ),
                       Text(
-                        " 0:1 ",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 17,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.only(left: 5, right: 5),
-                        child: Image.asset("assets/images/wolves.png",
-                            height: 33, width: 33),
-                      ),
-                      Text(
-                        "wolves",
+                        match.equipe2,
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 17,
@@ -85,10 +92,13 @@ class _MyDetailPageState extends State<PremierLeague> {
                     ],
                   ),
                 ),
-                Icon(
-                  Icons.notifications_none_rounded,
-                  size: 26,
-                  color: Colors.black,
+                Text(
+                  "",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 17,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ],
             ),

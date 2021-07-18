@@ -23,15 +23,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
-  cached_network_image: ^3.0.0
+  cupertino_icons: any
+  cached_network_image: any
 
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_svg: ^0.22.0
+  flutter_svg: any
+  group_list_view: any
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -62,23 +63,25 @@ flutter:
   #    - assets/images/img7.jpg
   #    - assets/images/img3.jpeg
   #    - assets/images/img5.jpg
-  #    - assets/images/realmadrid.png
-  #    - assets/images/barca.png
-  #    - assets/images/athletico.png
-  #    - assets/images/sevilla.png
-  #    - assets/images/valencia.png
-  #    - assets/images/levante.png
-  #    - assets/images/getafe.png
-  #    - assets/images/sociedad.png
-  #    - assets/images/wolves.png
-  #    - assets/images/arsenal.png
-  #    - assets/images/chelsea.png
-  #    - assets/images/manutd_logo.png
-  #    - assets/images/mancity_logo.png
-  #    - assets/images/wolves.png
-  #    - assets/images/liverpool.png
-  #    - assets/images/aymen.png
-  #    - assets/images/5-stars.svg
+  #    - assets/images/argantine.png
+  #    - assets/images/arabic.png
+  #    - assets/images/belguim.png
+  #    - assets/images/croitia.png
+  #    - assets/images/england.png
+  #    - assets/images/espagna.png
+  #    - assets/images/france.png
+  #    - assets/images/germany.png
+  #    - assets/images/italia.png
+  #    - assets/images/japon.png
+  #    - assets/images/poland.png
+  #    - assets/images/portogal.png
+  #    - assets/images/tunisie.png
+  #    - assets/images/wales.png
+  #    - assets/images/qatar.png
+  #    - assets/images/brazil.png
+  #    - assets/images/qatar1.png
+     - assets/images/
+ 
      
 
   # An image asset can refer to one or more resolution-specific "variants", see
