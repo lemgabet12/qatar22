@@ -13,16 +13,58 @@ class _MatchState extends State<Match> {
   List<MatchModel> items = [];
 
   _MatchState() {
-    items.add(new MatchModel("images/italia.png", "Iron Man",
-        "Genius. Billionaire. Playboy. Philanthropist. Tony Stark's confidence is only matched by his high-flying abilities as the hero called Iron Man."));
-    items.add(new MatchModel("images/germany.png", "Captain America",
-        "Recipient of the Super-Soldier serum, World War II hero Steve Rogers fights for American ideals as one of the world’s mightiest heroes and the leader of the Avengers."));
-    items.add(new MatchModel("images/iron_man.png", "Thor",
-        "The son of Odin uses his mighty abilities as the God of Thunder to protect his home Asgard and planet Earth alike."));
-    items.add(new MatchModel("images/iron_man.png", "Hulk",
-        "Dr. Bruce Banner lives a life caught between the soft-spoken scientist he’s always been and the uncontrollable green monster powered by his rage."));
-    items.add(new MatchModel("images/iron_man.png", "Black Widow",
-        "Despite super spy Natasha Romanoff’s checkered past, she’s become one of S.H.I.E.L.D.’s most deadly assassins and a frequent member of the Avengers."));
+    items.add(new MatchModel("", "", "images/brazil.png", "Brazil", "1:0",
+        "Qatar", "images/qatar.png"));
+    items.add(new MatchModel("", "Recipient of the Super-Soldier serum",
+        "images/wales.png", "Wales", "1:0", "Tunisie", "images/tunisie.png"));
+    items.add(new MatchModel(
+        "Thor",
+        "The son of Odin uses his mighty abil",
+        "images/poland.png",
+        "Poland",
+        "1:0",
+        "Portogal",
+        "images/portogal.png"));
+    items.add(new MatchModel(
+        "",
+        "Dr. Bruce Banner lives a life caught between the soft",
+        "images/japon.png",
+        "Japon",
+        "1:0",
+        "germany",
+        "images/germany.png"));
+    items.add(new MatchModel(
+        "",
+        "Despite super spy Natasha Romanoff’s checkered past, she’s become ",
+        "images/espagna.png",
+        "Espagna",
+        "1:0",
+        "France",
+        "images/france.png"));
+    items.add(new MatchModel(
+        "",
+        "Despite super spy Natasha Romanoff’s checkered past, she’s become ",
+        "images/italia.png",
+        "italia",
+        "1:0",
+        "England",
+        "images/england.png"));
+    items.add(new MatchModel(
+        "",
+        "Despite super spy Natasha Romanoff’s checkered past, she’s become ",
+        "images/argantine.png",
+        "argantina",
+        "1:0",
+        "arabic saoudi",
+        "images/arabic.png"));
+    items.add(new MatchModel(
+        "",
+        "Despite super spy Natasha Romanoff’s checkered past, she’s become ",
+        "images/belguim.png",
+        "belguim",
+        "1:0",
+        "croitia",
+        "images/croitia.png"));
   }
 
   Widget SuperHeroCell(BuildContext ctx, int index) {
