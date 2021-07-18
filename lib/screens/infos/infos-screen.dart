@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:qatar22/screens/account/app-forgot-password.dart';
+import 'package:qatar22/screens/infos/info-detail/info-details.dart';
 
 class InfosScreen extends StatelessWidget {
   const InfosScreen({Key? key}) : super(key: key);
@@ -10,7 +10,8 @@ class InfosScreen extends StatelessWidget {
         onTap: () => {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AppForgotPassword()),
+                MaterialPageRoute(
+                    builder: (context) => InfoDetails(route: title)),
               )
             },
         child: Container(
@@ -66,7 +67,7 @@ class InfosScreen extends StatelessWidget {
                         cards('icons/restaurant.svg', 'Restaurants', context),
                         cards('icons/parking.svg', 'Parkings', context),
                         cards('icons/shopping-cart.svg', 'Shopping', context),
-                        cards('icons/parc.svg', 'Parks', context),
+                        cards('icons/parc.svg', 'Parcs', context),
                         cards('icons/rent.svg', 'Rent Cars', context),
                         cards('icons/consult.svg', 'Services', context),
                         cards('icons/plus.svg', 'More', context)
