@@ -45,7 +45,6 @@ class _ForYouContainerState extends State<ForYouContainer> {
                   topRight: Radius.circular(20),
                 ),
                 image: DecorationImage(
-                  fit: BoxFit.fill,
                   image: AssetImage(widget.article.image),
                 ),
               ),
@@ -64,14 +63,6 @@ class _ForYouContainerState extends State<ForYouContainer> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          widget.article.category,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
                           widget.article.time,
                           style: TextStyle(
                             color: Colors.grey,
@@ -85,15 +76,8 @@ class _ForYouContainerState extends State<ForYouContainer> {
                       widget.article.title,
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    Text(
-                      widget.article.author,
-                      style: TextStyle(
-                        color: Colors.grey,
                         fontSize: 15,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ],

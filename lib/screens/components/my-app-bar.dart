@@ -9,9 +9,9 @@ class Myappbar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
         centerTitle: true,
         iconTheme: IconThemeData(color: Colors.white),
-        title: SvgPicture.asset("images/logo2.svg",
-            width: 150.0, height: 100.0, fit: BoxFit.cover),
-        backgroundColor: Color.fromRGBO(153, 35, 43, 1.0),
+        title: SvgPicture.asset("assets/images/logo2.svg",
+            width: 600.0, height: 150.0, fit: BoxFit.cover),
+        backgroundColor: (Colors.pink.shade900),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.settings, color: Colors.white),

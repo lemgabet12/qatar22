@@ -10,7 +10,7 @@ class SplashScreen extends StatefulWidget {
 
 class SplashScreenState extends State<SplashScreen> {
   void startTimer() {
-    Timer(Duration(seconds: 5), () {
+    Timer(Duration(seconds: 2), () {
       Navigator.of(context).pushReplacementNamed(HOME_SCREEN);
     });
   }

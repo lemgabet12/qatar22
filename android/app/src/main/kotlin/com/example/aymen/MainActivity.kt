@@ -1,4 +1,4 @@
-package com.example.qatar22
+package com.example.Q22
 
 import io.flutter.embedding.android.FlutterActivity
 

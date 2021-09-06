@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qatar22/screens/fan/models/post_model.dart';
 import 'package:qatar22/screens/fan/vote/view_post.dart';
+import 'package:qatar22/screens/home/home-screen.dart';
 
 class Vote extends StatefulWidget {
   @override
@@ -52,15 +53,11 @@ class _VoteState extends State<Vote> {
                     title: Text(
                       posts[index].authorName,
                       style: TextStyle(
+                        fontFamily: FontNameDefault,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     subtitle: Text(posts[index].timeAgo),
-                    trailing: IconButton(
-                      icon: Icon(Icons.more_horiz),
-                      color: Colors.black,
-                      onPressed: () => print('More'),
-                    ),
                   ),
                   InkWell(
                     onDoubleTap: () => print('Like post'),
@@ -80,13 +77,6 @@ class _VoteState extends State<Vote> {
                       height: 400.0,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25.0),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black45,
-                            offset: Offset(0, 5),
-                            blurRadius: 8.0,
-                          ),
-                        ],
                         image: DecorationImage(
                           image: AssetImage(posts[index].imageUrl),
                           fit: BoxFit.fitWidth,
@@ -111,6 +101,7 @@ class _VoteState extends State<Vote> {
                                 Text(
                                   '2,515',
                                   style: TextStyle(
+                                    fontFamily: FontNameDefault,
                                     fontSize: 14.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -137,6 +128,7 @@ class _VoteState extends State<Vote> {
                                 Text(
                                   '350',
                                   style: TextStyle(
+                                    fontFamily: FontNameDefault,
                                     fontSize: 14.0,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -144,11 +136,6 @@ class _VoteState extends State<Vote> {
                               ],
                             ),
                           ],
-                        ),
-                        IconButton(
-                          icon: Icon(Icons.bookmark_border),
-                          iconSize: 30.0,
-                          onPressed: () => print('Save post'),
                         ),
                       ],
                     ),

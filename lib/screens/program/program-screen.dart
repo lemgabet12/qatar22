@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:qatar22/screens/program/classment.dart';
-import 'package:qatar22/screens/program/resultat.dart';
 import 'package:qatar22/screens/program/match.dart';
 
 class ProgramScreen extends StatelessWidget {
@@ -11,7 +10,7 @@ class ProgramScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new DefaultTabController(
-      length: 3,
+      length: 2,
       child: new Scaffold(
         backgroundColor: mainColor,
         appBar: new AppBar(
@@ -22,7 +21,6 @@ class ProgramScreen extends StatelessWidget {
                 tabs: [
                   new Tab(text: "Match"),
                   new Tab(text: "Classement"),
-                  new Tab(text: "Resultat"),
                 ],
               ),
             ],
@@ -32,7 +30,6 @@ class ProgramScreen extends StatelessWidget {
           children: [
             Match(),
             Classement(),
-            Resultat(),
           ],
         ),
       ),

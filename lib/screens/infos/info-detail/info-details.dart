@@ -3,21 +3,12 @@ import 'package:qatar22/screens/infos/info-detail/info-detail-list.dart';
 import 'package:qatar22/screens/infos/info-detail/info-detail-map.dart';
 
 class InfoDetails extends StatefulWidget {
-  String route;
-
-  InfoDetails({required this.route});
-
   @override
-  _InfoDetailsState createState() => _InfoDetailsState(route);
+  _InfoDetailsState createState() => _InfoDetailsState();
 }
 
 class _InfoDetailsState extends State<InfoDetails> {
-  late String route;
   late TabController _tabController;
-
-  _InfoDetailsState(String route) {
-    this.route = route;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +16,6 @@ class _InfoDetailsState extends State<InfoDetails> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: Text(route),
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.search, color: Colors.black),

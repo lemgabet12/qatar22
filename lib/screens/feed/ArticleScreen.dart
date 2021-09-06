@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qatar22/screens/feed/Data/data.dart';
+import 'package:qatar22/screens/home/home-screen.dart';
 
 class ArticleScreen extends StatefulWidget {
   final Article article;
@@ -27,7 +28,6 @@ class _ArticleScreenState extends State<ArticleScreen> {
                           bottomRight: Radius.circular(50),
                         ),
                         image: DecorationImage(
-                          fit: BoxFit.fill,
                           image: AssetImage(widget.article.image),
                         ),
                       ),
@@ -46,18 +46,11 @@ class _ArticleScreenState extends State<ArticleScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            widget.article.category,
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 10,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
                             widget.article.time,
                             style: TextStyle(
+                              fontFamily: FontNameDefault,
                               color: Colors.grey,
-                              fontSize: 5,
+                              fontSize: 20,
                               fontWeight: FontWeight.w700,
                             ),
                           ),
@@ -69,8 +62,9 @@ class _ArticleScreenState extends State<ArticleScreen> {
                       Text(
                         widget.article.title,
                         style: TextStyle(
+                          fontFamily: FontNameDefault,
                           color: Colors.black,
-                          fontSize: 10,
+                          fontSize: 20,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
@@ -81,7 +75,7 @@ class _ArticleScreenState extends State<ArticleScreen> {
                         children: [
                           Image.asset(
                             widget.article.authorImg,
-                            height: 30,
+                            height: 10,
                           ),
                         ],
                       ),
@@ -91,8 +85,9 @@ class _ArticleScreenState extends State<ArticleScreen> {
                       Text(
                         widget.article.description,
                         style: TextStyle(
+                          fontFamily: FontNameDefault,
                           color: Colors.black54,
-                          fontSize: 15,
+                          fontSize: 20,
 //                      fontWeight: FontWeight.w700,
                         ),
                       ),

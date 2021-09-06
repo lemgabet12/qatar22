@@ -25,6 +25,8 @@ dependencies:
     sdk: flutter
   cupertino_icons: any
   cached_network_image: any
+  intl: ^0.17.0
+  google_fonts: ^2.1.0
 
 
 
@@ -32,7 +34,11 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_svg: any
-  group_list_view: any
+  group_list_view: 
+
+module:
+  androidX: true  
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -48,7 +54,11 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
      - assets/images/
+     - assets/png/
+     - assets/info/
      - assets/icons/
+
+
   #    - assets/images/qatar1.jpg
   #    - assets/images/qatar3.png
   #    - assets/images/logo2.svg

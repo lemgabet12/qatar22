@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:group_list_view/group_list_view.dart';
 import 'dart:math';
 
+import 'package:qatar22/screens/home/home-screen.dart';
+
 Map<String, List> _elements = {
   'Groupe A': ['Qatar', 'Argantina', 'Italia', 'Germany'],
   'Groupe B': ['Tunisia', 'France', 'Croitia', 'saoudi arabia'],
@@ -26,12 +28,15 @@ class Classement extends StatelessWidget {
             ),
             child: Center(
                 child: Text(user.substring(0, 1).toUpperCase(),
-                    style: TextStyle(fontSize: 22, color: Colors.black))),
+                    style: TextStyle(
+                        fontFamily: FontNameDefault,
+                        fontSize: 22,
+                        color: Colors.black))),
           ),
         ),
         Text(
           user,
-          style: TextStyle(fontSize: 18),
+          style: TextStyle(fontFamily: FontNameDefault, fontSize: 18),
         ),
       ],
     ));
@@ -60,6 +65,7 @@ class Classement extends StatelessWidget {
                       child: Text(
                         _elements.keys.toList()[section],
                         style: TextStyle(
+                            fontFamily: FontNameDefault,
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
                             color: Colors.white),

@@ -9,6 +9,8 @@ import 'package:qatar22/screens/infos/infos-screen.dart';
 import 'package:qatar22/screens/program/program-screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+const String FontNameDefault = 'Montserrat';
+
 class HomeScreen extends StatefulWidget {
   @override
   HomeScreenState createState() => new HomeScreenState();

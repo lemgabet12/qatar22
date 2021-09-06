@@ -14,26 +14,21 @@ final List<Comment> comments = [
   Comment(
     authorName: 'Angel',
     authorImageUrl: 'assets/images/user2.png',
-    text: 'Loving this photo!!',
+    text: 'صورة جميلة ',
   ),
   Comment(
     authorName: 'Charlie',
     authorImageUrl: 'assets/images/user3.png',
-    text: 'One of the best photos of you...',
+    text: 'صورة جميلة',
   ),
   Comment(
     authorName: 'Angelina Martin',
     authorImageUrl: 'assets/images/user4.png',
-    text: 'Can\'t wait for you to post more!',
+    text: 'صورة جميلة',
   ),
   Comment(
     authorName: 'Jax',
     authorImageUrl: 'assets/images/user1.png',
-    text: 'Nice job',
-  ),
-  Comment(
-    authorName: 'Sam Martin',
-    authorImageUrl: 'assets/images/user0.png',
-    text: 'Thanks everyone :)',
+    text: 'صورة جميلة',
   ),
 ];

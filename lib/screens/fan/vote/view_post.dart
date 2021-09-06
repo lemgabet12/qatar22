@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qatar22/screens/fan/models/comment_model.dart';
 import 'package:qatar22/screens/fan/models/post_model.dart';
+import 'package:qatar22/screens/home/home-screen.dart';
 
 class ViewPostScreen extends StatefulWidget {
   final Post post;
@@ -43,6 +44,7 @@ class _ViewPostScreenState extends State<ViewPostScreen> {
         title: Text(
           comments[index].authorName,
           style: TextStyle(
+            fontFamily: FontNameDefault,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -120,6 +122,7 @@ class _ViewPostScreenState extends State<ViewPostScreen> {
                                 title: Text(
                                   widget.post.authorName,
                                   style: TextStyle(
+                                    fontFamily: FontNameDefault,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -148,17 +151,12 @@ class _ViewPostScreenState extends State<ViewPostScreen> {
                                   blurRadius: 8.0,
                                 ),
                               ],
-                              image: DecorationImage(
-                                image: AssetImage(widget.post.imageUrl),
-                                fit: BoxFit.fitWidth,
-                              ),
                             ),
                           ),
                         ),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 20.0),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               Row(
                                 children: <Widget>[
@@ -172,6 +170,7 @@ class _ViewPostScreenState extends State<ViewPostScreen> {
                                       Text(
                                         '2,515',
                                         style: TextStyle(
+                                          fontFamily: FontNameDefault,
                                           fontSize: 14.0,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -191,6 +190,7 @@ class _ViewPostScreenState extends State<ViewPostScreen> {
                                       Text(
                                         '350',
                                         style: TextStyle(
+                                          fontFamily: FontNameDefault,
                                           fontSize: 14.0,
                                           fontWeight: FontWeight.w600,
                                         ),

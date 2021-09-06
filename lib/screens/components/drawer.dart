@@ -8,14 +8,13 @@ class InkWellDrawer extends StatelessWidget {
       child: ListView(
         children: <Widget>[
           DrawerHeader(
-              decoration:
-                  BoxDecoration(color: Color.fromRGBO(153, 35, 43, 1.0)),
+              decoration: BoxDecoration(color: Colors.pink.shade900),
               child: Container(
                 child: Column(
                   children: <Widget>[
                     Padding(padding: const EdgeInsets.only(top: 15.0)),
                     CircleAvatar(
-                      backgroundImage: AssetImage("images/aymen.png"),
+                      backgroundImage: AssetImage("assets/images/aymen.png"),
                       radius: 40.0,
                     ),
                     Text(
