@@ -1,191 +1,142 @@
 import 'package:flutter/material.dart';
-import 'package:qatar22/screens/account/app-forgot-password.dart';
-import 'package:qatar22/screens/account/app-signup.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
-class AccountScreen extends StatelessWidget {
+class AccountScreen extends StatefulWidget {
+  @override
+  _SigninState createState() => _SigninState();
+}
+
+class _SigninState extends State<AccountScreen> {
+  // For CircularProgressIndicator.
+  bool visible = false;
+
+  // Getting value from TextField widget.
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  Future userLogin() async {
+    // Showing CircularProgressIndicator.
+    setState(() {
+      visible = true;
+    });
+
+    // Getting value from Controller
+    String email = emailController.text;
+    String password = passwordController.text;
+
+    // SERVER LOGIN API URL
+
+    // Store all data with Param Name.
+
+    // Starting Web API Call.
+    var response = await http.post(
+      Uri.parse(
+          'http://q22.avocatar.tn/WebServices/login.php?login=text_champs_login&password=text_champ_password'),
+    );
+
+    // Getting Server response into variable.
+    var message = jsonDecode(response.body);
+    print(message);
+
+    // If the Response Message is Matched.
+    if (message == 'success') {
+      // Hiding the CircularProgressIndicator.
+      setState(() {
+        visible = false;
+      });
+
+      // Navigate to Home & Sending Email to Next Screen.
+      Navigator.pushNamed(context, '/home');
+    } else {
+      // If Email or Password did not Matched.
+      // Hiding the CircularProgressIndicator.
+      setState(() {
+        visible = false;
+      });
+
+      // Showing Alert Dialog with Response JSON Message.
+      // showDialog(
+      //   context: context,
+      //   builder: (BuildContext context) {
+      //     return AlertDialog(
+      //       title: new Text(message),
+      //       actions: <Widget>[
+      //         FlatButton(
+      //           child: new Text("OK"),
+      //           onPressed: () {
+      //             Navigator.of(context).pop();
+      //           },
+      //         ),
+      //       ],
+      //     );
+      //   },
+      // );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    String defaultFontFamily = 'Roboto-Light.ttf';
-    double defaultFontSize = 14;
-    double defaultIconSize = 17;
-
     return Scaffold(
-        body: Container(
-      padding: EdgeInsets.only(left: 20, right: 20, top: 0, bottom: 30),
-      width: double.infinity,
-      height: double.infinity,
-      color: Colors.white70,
-      child: Column(
-        children: <Widget>[
-          Flexible(
-            flex: 5,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                  width: 200,
-                  height: 200,
-                  alignment: Alignment.center,
-                  child: Image.asset("assets/images/qatar3.png"),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                TextField(
-                  showCursor: true,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      borderSide: BorderSide(
-                        width: 0,
-                        style: BorderStyle.none,
-                      ),
-                    ),
-                    filled: true,
-                    prefixIcon: Icon(
-                      Icons.phone,
-                      color: Color(0xFF666666),
-                      size: defaultIconSize,
-                    ),
-                    fillColor: Color(0xFFF2F3F5),
-                    hintStyle: TextStyle(
-                        color: Color(0xFF666666),
-                        fontFamily: defaultFontFamily,
-                        fontSize: defaultFontSize),
-                    hintText: "Phone Number",
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                TextField(
-                  showCursor: true,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      borderSide: BorderSide(
-                        width: 0,
-                        style: BorderStyle.none,
-                      ),
-                    ),
-                    filled: true,
-                    prefixIcon: Icon(
-                      Icons.lock_outline,
-                      color: Color(0xFF666666),
-                      size: defaultIconSize,
-                    ),
-                    suffixIcon: Icon(
-                      Icons.remove_red_eye,
-                      color: Color(0xFF666666),
-                      size: defaultIconSize,
-                    ),
-                    fillColor: Color(0xFFF2F3F5),
-                    hintStyle: TextStyle(
-                      color: Color(0xFF666666),
-                      fontFamily: defaultFontFamily,
-                      fontSize: defaultFontSize,
-                    ),
-                    hintText: "Password",
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                InkWell(
-                  onTap: () => {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => AppForgotPassword()),
-                    )
-                  },
-                  child: Container(
-                    child: Text(
-                      "Forgot your password?",
-                      style: TextStyle(
-                        color: Color(0xFFAC252B),
-                        fontFamily: defaultFontFamily,
-                        fontSize: defaultFontSize,
-                        fontStyle: FontStyle.normal,
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Container(
-                  width: double.infinity,
-                  child: RaisedButton(
-                    padding: EdgeInsets.all(17.0),
-                    onPressed: () {},
-                    child: Text(
-                      "Sign In",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontFamily: 'Poppins-Medium.ttf',
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    color: Color(0xFFBC1F26),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: new BorderRadius.circular(15.0),
-                        side: BorderSide(color: Color(0xFFBC1F26))),
-                  ),
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle, color: Color(0xFFF2F3F7)),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-              ],
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Center(),
+            SizedBox(height: 10.0),
+            TextFormField(
+              controller: emailController,
+              decoration: InputDecoration(labelText: 'Enter Username or Email'),
             ),
-          ),
-          Flexible(
-            flex: 1,
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    child: Text(
-                      "Don't have an account? ",
-                      style: TextStyle(
-                        color: Color(0xFF666666),
-                        fontFamily: defaultFontFamily,
-                        fontSize: defaultFontSize,
-                        fontStyle: FontStyle.normal,
-                      ),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () => {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => AppSignUp()),
-                      )
-                    },
-                    child: Container(
-                      child: Text(
-                        "Sign Up",
-                        style: TextStyle(
-                          color: Color(0xFFAC252B),
-                          fontFamily: defaultFontFamily,
-                          fontSize: defaultFontSize,
-                          fontStyle: FontStyle.normal,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+            SizedBox(height: 10.0),
+            TextFormField(
+              controller: passwordController,
+              decoration: InputDecoration(labelText: 'Enter Password'),
+              autofocus: false,
+              obscureText: true,
             ),
-          )
-        ],
+            SizedBox(height: 20.0),
+            FlatButton(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0),
+                  side: BorderSide(color: Colors.green)),
+              onPressed: userLogin,
+              child: Text('login'),
+              color: Colors.green,
+              minWidth: 300.0,
+            ),
+            SizedBox(height: 20.0),
+            Text('Forgot Password?'),
+            FlatButton(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0),
+                  side: BorderSide(color: Colors.green)),
+              onPressed: () {
+                Navigator.pushNamed(context, '/resetpassword');
+              },
+              child: Text('Reset Password'),
+              color: Colors.green,
+              minWidth: 200.0,
+            ),
+            SizedBox(height: 20.0),
+            Text('Do not have an account yet?'),
+            FlatButton(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0),
+                  side: BorderSide(color: Colors.green)),
+              onPressed: () {
+                Navigator.pushNamed(context, '/signup');
+              },
+              child: Text('Sign Up'),
+              color: Colors.green,
+              minWidth: 200.0,
+            ),
+          ],
+        ),
+        // ],
       ),
-    ));
+      // ),
+    );
   }
 }
