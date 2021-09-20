@@ -43,9 +43,8 @@ class _FeedScreenState extends State<FeedScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => DetailPage(
-                              title: snapshot.data![index].titre,
-                            ),
+                            builder: (context) =>
+                                DetailPage(snapshot.data![index]),
                           ),
                         );
                       },

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:qatar22/screens/feed/Data/data.dart';
 
 class DetailPage extends StatefulWidget {
-  final String title;
-  DetailPage({Key? key, required this.title}) : super(key: key);
+  final Feed title;
+  DetailPage(this.title);
   @override
   _CharacterDetailsPageState createState() => _CharacterDetailsPageState();
 }
@@ -11,11 +11,9 @@ class DetailPage extends StatefulWidget {
 class _CharacterDetailsPageState extends State<DetailPage> {
   @override
   Widget build(BuildContext context) {
-    final Feed data = ModalRoute.of(context)!.settings.arguments as Feed;
-
     return Scaffold(
         appBar: AppBar(
-          title: Text("About ${data.titre}"),
+          title: Text("About ${widget.title.titre}"),
         ),
         body: SingleChildScrollView(
           child: Container(
@@ -41,7 +39,7 @@ class _CharacterDetailsPageState extends State<DetailPage> {
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(50)),
                                   child: FadeInImage(
-                                      image: NetworkImage(data.img),
+                                      image: NetworkImage(widget.title.img),
                                       placeholder:
                                           AssetImage('assets/no-image.png'),
                                       height: 200.0,
@@ -58,7 +56,7 @@ class _CharacterDetailsPageState extends State<DetailPage> {
                   children: <Widget>[
                     Center(
                         child: Text(
-                      "${data.titre}",
+                      "${widget.title.titre}",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 20,
@@ -75,15 +73,18 @@ class _CharacterDetailsPageState extends State<DetailPage> {
                         children: <Widget>[
                           ListTile(
                             title: Text("About"),
+                            leading: CircleAvatar(
+                              backgroundImage:
+                                  NetworkImage('${widget.title.img}'),
+                            ),
                           ),
-                          Divider(),
                           ListTile(
                             title: Text("Status"),
-                            subtitle: Text("${data.type}"),
+                            subtitle: Text("${widget.title.type}"),
                           ),
                           ListTile(
                             title: Text("Specie"),
-                            subtitle: Text("${data.description}"),
+                            subtitle: Text("${widget.title.description}"),
                           ),
                         ],
                       ),

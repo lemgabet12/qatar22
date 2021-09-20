@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import 'package:qatar22/screens/account/user_data_page.dart';
+
 class AccountScreen extends StatefulWidget {
   @override
   _SigninState createState() => _SigninState();
@@ -10,7 +12,7 @@ class AccountScreen extends StatefulWidget {
 class _SigninState extends State<AccountScreen> {
   // For CircularProgressIndicator.
   bool visible = false;
-
+  var flatBtnKey = GlobalKey();
   // Getting value from TextField widget.
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -30,17 +32,30 @@ class _SigninState extends State<AccountScreen> {
     // Store all data with Param Name.
 
     // Starting Web API Call.
-    var response = await http.post(
-      Uri.parse(
-          'http://q22.avocatar.tn/WebServices/login.php?login=text_champs_login&password=text_champ_password'),
-    );
+    // var response = await http.post(
+    //   Uri.parse(
+    //       'http://q22.avocatar.tn/WebServices/login.php?login=&password=text_champ_password'),
+    // );
+    var url = Uri.parse(
+        'http://q22.avocatar.tn/WebServices/login.php?login=${emailController.text}&password=${passwordController.text}'); //q22.avocatar.tn/WebServices/login.php?login=text_champs_login&password=text_champ_password
+    var response = await http.post(url, body: {
+      'id_user': '1',
+      'nom': 'Malika',
+      'prenom': 'Labidi',
+      'img_user': ''
+    });
+
+    print('Response status: ${response.statusCode}'); //Response status: 200
+    print('Response body: ${response.body}'); //Response body: {"Q22_Fan":[]}
+    // var urlContent =
+    //     "http://q22.avocatar.tn/WebServices/login.php?login=${snapshot.data.email}&password=${snapshot.data.passwrod}";
 
     // Getting Server response into variable.
-    var message = jsonDecode(response.body);
-    print(message);
+    var responseObj = jsonDecode(response.body);
+    print(responseObj);
 
     // If the Response Message is Matched.
-    if (message == 'success') {
+    if (responseObj == 'success') {
       // Hiding the CircularProgressIndicator.
       setState(() {
         visible = false;
@@ -98,10 +113,15 @@ class _SigninState extends State<AccountScreen> {
             ),
             SizedBox(height: 20.0),
             FlatButton(
+              key: flatBtnKey,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(18.0),
                   side: BorderSide(color: Colors.green)),
-              onPressed: userLogin,
+              onPressed: () async {
+                await userLogin();
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => UserDataPage()));
+              },
               child: Text('login'),
               color: Colors.green,
               minWidth: 300.0,
