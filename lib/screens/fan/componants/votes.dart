@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:qatar22/screens/fan/models/post_model.dart';
-import 'package:qatar22/screens/fan/vote/view_post.dart';
 import 'package:qatar22/screens/home/home-screen.dart';
 
 class Vote extends StatefulWidget {
+  final String firstName, lastName, userImage, userId;
+
+  Vote(this.firstName, this.lastName, this.userImage, this.userId);
   @override
   _VoteState createState() => _VoteState();
 }
 
 class _VoteState extends State<Vote> {
-  Widget _buildPost(int index) {
+  Widget _buildPost(String index) {
+    //  index = widget.userId;
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
       child: Container(
@@ -44,44 +46,44 @@ class _VoteState extends State<Vote> {
                           child: Image(
                             height: 50.0,
                             width: 50.0,
-                            image: AssetImage(posts[index].authorImageUrl),
+                            image: AssetImage(widget.userImage),
                             fit: BoxFit.cover,
                           ),
                         ),
                       ),
                     ),
                     title: Text(
-                      posts[index].authorName,
+                      widget.firstName + " " + widget.lastName,
                       style: TextStyle(
                         fontFamily: FontNameDefault,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    subtitle: Text(posts[index].timeAgo),
+                    //subtitle: Text(widget.lastName[index].timeAgo),
                   ),
                   InkWell(
                     onDoubleTap: () => print('Like post'),
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => ViewPostScreen(
-                            post: posts[index],
-                          ),
-                        ),
-                      );
+                      //Navigator.push(
+                      //context,
+                      // MaterialPageRoute(
+                      //builder: (_) => ViewPostScreen(
+                      // post: posts[index],
+                      // ),
+                      // ),
+                      // );
                     },
                     child: Container(
                       margin: EdgeInsets.all(10.0),
                       width: double.infinity,
                       height: 400.0,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25.0),
-                        image: DecorationImage(
-                          image: AssetImage(posts[index].imageUrl),
-                          fit: BoxFit.fitWidth,
-                        ),
-                      ),
+                          //borderRadius: BorderRadius.circular(25.0),
+                          //image: DecorationImage(
+                          //image: AssetImage(posts[index].imageUrl),
+                          //  fit: BoxFit.fitWidth,
+                          //  ),
+                          ),
                     ),
                   ),
                   Padding(
@@ -115,14 +117,14 @@ class _VoteState extends State<Vote> {
                                   icon: Icon(Icons.chat),
                                   iconSize: 30.0,
                                   onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (_) => ViewPostScreen(
-                                          post: posts[index],
-                                        ),
-                                      ),
-                                    );
+                                    //Navigator.push(
+                                    //context,
+                                    // MaterialPageRoute(
+                                    // builder: (_) => ViewPostScreen(
+                                    // post: posts[index],
+                                    // ),
+                                    // ),
+                                    // );
                                   },
                                 ),
                                 Text(
@@ -163,8 +165,8 @@ class _VoteState extends State<Vote> {
               children: <Widget>[],
             ),
           ),
-          _buildPost(0),
-          _buildPost(1),
+          _buildPost(widget.userId),
+          _buildPost(widget.userId),
         ],
       ),
     );

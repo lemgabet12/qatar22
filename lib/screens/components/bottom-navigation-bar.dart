@@ -35,10 +35,6 @@ class _CustumBottomNavigationBar extends State<CustumBottomNavigationBar> {
           icon: Icon(CupertinoIcons.star_lefthalf_fill),
           label: 'Fan',
         ),
-        BottomNavigationBarItem(
-          icon: Icon(CupertinoIcons.profile_circled),
-          label: 'Account',
-        )
       ],
       currentIndex: _selectedIndex,
       selectedItemColor: Colors.red.shade900,

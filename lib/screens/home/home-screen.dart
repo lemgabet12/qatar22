@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:qatar22/screens/account/app-signin.dart';
 import 'package:qatar22/screens/components/bottom-navigation-bar.dart';
-import 'package:qatar22/screens/account/account-screen.dart';
-import 'package:qatar22/screens/components/drawer.dart';
 import 'package:qatar22/screens/components/my-app-bar.dart';
-import 'package:qatar22/screens/fan/fan-screen.dart';
 import 'package:qatar22/screens/feed/feed-screen.dart';
 import 'package:qatar22/screens/infos/infos-screen.dart';
 import 'package:qatar22/screens/program/program-screen.dart';
@@ -22,8 +20,7 @@ class HomeScreenState extends State<HomeScreen> {
     FeedScreen(),
     ProgramScreen(),
     InfosScreen(),
-    FanScreen(),
-    AccountScreen()
+    AccountScreen(),
   ];
 
   @override
@@ -35,7 +32,6 @@ class HomeScreenState extends State<HomeScreen> {
           getCurrentPage(_selectedIndex),
         ],
       ),
-      drawer: InkWellDrawer(),
       bottomNavigationBar: CustumBottomNavigationBar(onSelectItem: (index) {
         _selectedIndex = index;
         setState(() {});

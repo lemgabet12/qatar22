@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:qatar22/screens/components/settings.dart';
 
 class Myappbar extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -12,18 +11,7 @@ class Myappbar extends StatelessWidget implements PreferredSizeWidget {
         title: SvgPicture.asset("assets/images/logo2.svg",
             width: 600.0, height: 150.0, fit: BoxFit.cover),
         backgroundColor: (Colors.pink.shade900),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.settings, color: Colors.white),
-            alignment: Alignment.centerLeft,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => SettingsFourPage()),
-              );
-            },
-          )
-        ]);
+        actions: <Widget>[]);
   }
 
   @override

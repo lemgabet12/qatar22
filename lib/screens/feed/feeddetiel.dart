@@ -71,19 +71,13 @@ class _CharacterDetailsPageState extends State<DetailPage> {
                       ),
                       child: Column(
                         children: <Widget>[
+                          Container(
+                              width: double.infinity,
+                              child: Image.network("${widget.title.img}")), //
                           ListTile(
-                            title: Text("About"),
-                            leading: CircleAvatar(
-                              backgroundImage:
-                                  NetworkImage('${widget.title.img}'),
-                            ),
-                          ),
-                          ListTile(
-                            title: Text("Status"),
                             subtitle: Text("${widget.title.type}"),
                           ),
                           ListTile(
-                            title: Text("Specie"),
                             subtitle: Text("${widget.title.description}"),
                           ),
                         ],
